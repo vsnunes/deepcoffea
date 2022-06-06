@@ -128,9 +128,9 @@ def create_overlap_window_csv(csv_path, file_list, prefix_pickle_output, interva
 
     return windows_seq
 
-data_path = '/data/website-fingerprinting/datasets/CrawlE_Proc/'
-file_list_path = '/data/seoh/greaterthan50_final_burst.txt'
-prefix_pickle_output = '/data/website-fingerprinting/datasets/new_dcf_data/crawle_new_overlap_interval'
+data_path = 'datasets/CrawlE_Proc_100/'
+file_list_path = 'results/CrawlE_Proc_100_files.txt'
+prefix_pickle_output = 'results/crawle_new_overlap_interval'
 create_overlap_window_csv(data_path, file_list_path, prefix_pickle_output, 5, 11, 2)
 #create_overlap_window_csv(data_path, file_list_path, prefix_pickle_output, 4, 11, 2)
 #create_overlap_window_csv(data_path, file_list_path, prefix_pickle_output, 3, 11, 2)

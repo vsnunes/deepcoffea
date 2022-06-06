@@ -79,8 +79,8 @@ def create_overlap_window_csv(csv_path, out_path, threshold, interval, num_windo
         fw.write ('\n')
     fw.close()
 
-data_path = '/data/website-fingerprinting/datasets/CrawlE_Proc_100/'
-out_file_path = '/data/seoh/CrawlE_Proc_100_files.txt'
-threshold=10 # min number of packets per window in both ends, used  30 for 500
+data_path = 'datasets/CrawlE_Proc_100/'
+out_file_path = 'results/CrawlE_Proc_100_files.txt'
+threshold=20 # min number of packets per window in both ends, used  30 for 500
 # That is, we drop the flow pairs if either of them has pkt count < threshold.
 create_overlap_window_csv(data_path, out_file_path, threshold, 5, 11, 2)

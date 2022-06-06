@@ -5,21 +5,25 @@ try:
 except ImportError:
     import _pickle as thepickle
 
-
-from keras.callbacks import LambdaCallback
+#from keras.callbacks import LambdaCallback
 from new_model import create_model, create_model_2d
-import keras.backend.tensorflow_backend as ktf
+#import keras.backend.tensorflow_backend as ktf
+#import keras.backend as ktf
+import tensorflow as tf
+from tensorflow.python.keras.callbacks import LambdaCallback
+#import keras.backend.tensorflow_backend as ktf
+from tensorflow.compat.v1.keras import backend as ktf
 import tensorflow as tf
 import os
-from keras.models import Model
-from keras.layers import Input, Lambda, Dot
-from keras import optimizers
+from tensorflow.python.keras.models import Model
+from tensorflow.python.keras.layers import Input, Lambda, Dot
+from tensorflow.keras import optimizers
 import sys
 import numpy as np
 import argparse
 import random
 import pickle
-import keras.backend as K
+import tensorflow.keras.backend as K
 #### Stop the model training when 0.002 to get the best result in the paper!!!!
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "1";
@@ -38,9 +42,9 @@ def get_params():
     return args
 
 def get_session(gpu_fraction=0.85):
-    gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=gpu_fraction,
+    gpu_options = tf.compat.v1.GPUOptions(per_process_gpu_memory_fraction=gpu_fraction,
                                 allow_growth=True)
-    return tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
+    return tf.compat.v1.Session(config=tf.compat.v1.ConfigProto(gpu_options=gpu_options))
 
 def load_whole_seq_new(tor_seq,exit_seq,circuit_labels,test_c,train_c,model_gb):
     train_window1=[]
